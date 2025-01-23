@@ -1,6 +1,7 @@
 import allure
 from page.base_page import BasePage
 from locators.account_page_locators import AccountPageLocators
+from data import URLS
 
 
 class AccountPage(BasePage):
@@ -42,4 +43,8 @@ class AccountPage(BasePage):
     @allure.step('поиск ссылки "Профиль"')
     def find_profile_link(self):
         return self.find_element_with_wait(AccountPageLocators.PROFILE_LINK)
+
+    @allure.step('Открыть страницу авторизации')
+    def open_account_page(self):
+        self.go_to_url(URLS.LOGIN_PAGE_URL)
 

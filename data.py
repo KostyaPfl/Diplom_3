@@ -1,11 +1,12 @@
 class URLS:
-    BASE_URL = 'https://stellarburgers.nomoreparties.site/'
-    REGISTER_USER_API_URL = 'https://stellarburgers.nomoreparties.site/api/auth/register'
-    DELETE_USER_API_URL = 'https://stellarburgers.nomoreparties.site/api/auth/user'
-    ORDERS_API_URL = 'https://stellarburgers.nomoreparties.site/api/orders'
-    LOGIN_PAGE_URL = 'https://stellarburgers.nomoreparties.site/login'
-    FORGOT_PASSWORD_PAGE_URL = 'https://stellarburgers.nomoreparties.site/forgot-password'
-    ORDER_FEED_PAGE_URL = 'https://stellarburgers.nomoreparties.site/feed'
+    BASE_URL = 'https://stellarburgers.nomoreparties.site'
+
+    REGISTER_USER_API_URL = f'{BASE_URL}/api/auth/register'
+    DELETE_USER_API_URL = f'{BASE_URL}/api/auth/user'
+    ORDERS_API_URL = f'{BASE_URL}/api/orders'
+    LOGIN_PAGE_URL = f'{BASE_URL}/login'
+    FORGOT_PASSWORD_PAGE_URL = f'{BASE_URL}/forgot-password'
+    ORDER_FEED_PAGE_URL = f'{BASE_URL}/feed'
 
 
 class OrderInfo:

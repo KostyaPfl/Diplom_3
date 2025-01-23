@@ -1,6 +1,7 @@
 import allure
 from page.base_page import BasePage
 from locators.forgot_password_page_locators import ForgotPasswordLocators
+from data import URLS
 
 class ForgotPasswordPage(BasePage):
     @allure.step('Найти заголовок Восстановление пароля')
@@ -14,3 +15,8 @@ class ForgotPasswordPage(BasePage):
     @allure.step('Нажатие на кнопку "Востановить"')
     def restore_button_click(self):
         self.click_to_element(ForgotPasswordLocators.RESTORE_BUTTON)
+
+    @allure.step('Открыть страницу восстановления пароля')
+    def open_forgot_password_page(self):
+        self.go_to_url(URLS.FORGOT_PASSWORD_PAGE_URL)
+

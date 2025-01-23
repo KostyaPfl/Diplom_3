@@ -1,6 +1,8 @@
 import allure
 from locators.order_feed_page_locators import OrderFeedPageLocators
 from page.base_page import BasePage
+from data import URLS
+
 
 class OrderFeedPage(BasePage):
 
@@ -16,7 +18,6 @@ class OrderFeedPage(BasePage):
     def click_on_order_card(self):
         self.find_element_with_wait(OrderFeedPageLocators.ORDER_CARD)
         self.click_to_element(OrderFeedPageLocators.ORDER_CARD)
-
 
     @allure.step('Поиск элемента по номеру заказа')
     def search_element_by_order_number(self, order_number):
@@ -37,3 +38,7 @@ class OrderFeedPage(BasePage):
     @allure.step('Получение текущего номера заказа в разделе "В работе"')
     def get_order_from_section_in_work(self):
         return self.find_element_with_wait(OrderFeedPageLocators.ORDER_IN_WORK).text
+
+    @allure.step('Открыть страницу ленты заказов')
+    def open_order_feed_page(self):
+        self.go_to_url(URLS.ORDER_FEED_PAGE_URL)

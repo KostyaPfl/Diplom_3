@@ -48,3 +48,6 @@ class BasePage:
             ingredient,
             basket_lst
         )
+
+    def go_to_url(self, url):
+        self.driver.get(url)

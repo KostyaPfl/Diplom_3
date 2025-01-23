@@ -1,6 +1,7 @@
 import allure
 from locators.main_page_locators import MainPageLocators
 from page.base_page import BasePage
+from data import URLS
 
 
 class MainPage(BasePage):
@@ -10,7 +11,6 @@ class MainPage(BasePage):
         self.find_element_with_wait(MainPageLocators.FLUORESCENT_BUN)
         self.click_to_element(MainPageLocators.PERSONAL_ACCOUNT_BUTTON)
 
-
     @allure.step('Нажатие на кнопку "Лента заказов"')
     def click_on_order_feed_button(self):
         self.click_to_element(MainPageLocators.ORDER_FEED_BUTTON)
@@ -18,8 +18,6 @@ class MainPage(BasePage):
     @allure.step('найти ингридиент')
     def find_flurescent_bun(self):
         self.find_element_with_wait(MainPageLocators.FLUORESCENT_BUN)
-
-
 
     @allure.step('Нажатие на кнопку "Конструктор"')
     def click_on_constructor_button(self):
@@ -46,12 +44,10 @@ class MainPage(BasePage):
         self.wait_element_invisibility(MainPageLocators.INGREDIENT_DETAILS_WINDOW)
         return True
 
-
     @allure.step('Добавить булку в корзину')
     def add_bun(self):
         self.find_element_with_wait(MainPageLocators.FLUORESCENT_BUN)
         self.drag_and_drop_element(MainPageLocators.FLUORESCENT_BUN, MainPageLocators.TARGET_CREATE_ORDER)
-
 
     @allure.step('найти счетчик ингредиента в корзине')
     def find_ingredient_counter(self):
@@ -77,3 +73,6 @@ class MainPage(BasePage):
             order_number = self.get_text_from_element(MainPageLocators.CREATED_ORDER_NUMBER)
         return order_number
 
+    @allure.step('Открыть главную страницу')
+    def open_main_page(self):
+        self.go_to_url(URLS.BASE_URL)
